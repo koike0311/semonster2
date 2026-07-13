@@ -9,6 +9,10 @@ public class App {
   public static void main(String[] args) {
     System.out.println(new App().getGreeting());
 
+    // PlayerクラスとMonsterクラスのインスタンスを生成して表示
+    Player player = new Player("勇者", 5);
+    System.out.println(player);
+
     Monster monster = new Monster("スライム", 2);
     System.out.println(monster);
 
