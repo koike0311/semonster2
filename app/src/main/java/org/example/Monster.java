@@ -50,6 +50,9 @@ public class Monster {
       case 4:
         summonedName = "フェニックス";
         break;
+      case 5:
+        summonedName = "アルマジロ";
+        break;
       default:
         summonedName = "未知のモンスター";
         break;
