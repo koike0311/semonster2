@@ -30,6 +30,33 @@ public class Monster {
     }
   }
 
+  public static Monster summonMonster(int number) {
+    String summonedName;
+    int defaultRarity = 1;
+
+    switch (number) {
+      case 0:
+        summonedName = "スライム";
+        break;
+      case 1:
+        summonedName = "ゴブリン";
+        break;
+      case 2:
+        summonedName = "デュラハン";
+        break;
+      case 3:
+        summonedName = "ドラゴン";
+        break;
+      case 4:
+        summonedName = "フェニックス";
+        break;
+      default:
+        summonedName = "未知のモンスター";
+        break;
+    }
+    return new Monster(summonedName, defaultRarity);
+  }
+
   @Override
   public String toString() {
     return "Monster{name='" + name + "', rarity=" + rarity + "}";

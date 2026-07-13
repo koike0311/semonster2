@@ -12,4 +12,12 @@ public class MonsterTest {
     assertEquals("スライム", monster.getName());
     assertEquals(2, monster.getRarity());
   }
+
+  @Test
+  public void summonMonsterReturnsCorrectMonster() {
+    Monster monster = Monster.summonMonster(3);
+
+    assertEquals("ドラゴン", monster.getName());
+    assertEquals(1, monster.getRarity());
+  }
 }
