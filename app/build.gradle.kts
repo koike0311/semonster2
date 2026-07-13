@@ -34,3 +34,18 @@ application {
     // Define the main class for the application.
     mainClass = "org.example.App"
 }
+
+// コンパイル時の文字コードをUTF-8に設定
+tasks.withType<JavaCompile> {
+    options.encoding = "UTF-8"
+}
+
+// テスト実行時の文字コードをUTF-8に設定
+tasks.withType<Test> {
+    systemProperty("file.encoding", "UTF-8")
+}
+
+// アプリケーション実行時（gradle run）の文字コードをUTF-8に設定
+tasks.withType<JavaExec> {
+    systemProperty("file.encoding", "UTF-8")
+}
