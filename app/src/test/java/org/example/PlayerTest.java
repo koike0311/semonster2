@@ -7,9 +7,9 @@ public class PlayerTest {
 
   @Test
   public void playerHasNameAndLevel() {
-    Player player = new Player("Knight", 5);
+    Player player = new Player("勇者", 5);
 
-    assertEquals("Knight", player.getName());
+    assertEquals("勇者", player.getName());
     assertEquals(5, player.getLevel());
   }
 
