@@ -35,17 +35,15 @@ application {
     mainClass = "org.example.App"
 }
 
-// コンパイル時の文字コードをUTF-8に設定
-tasks.withType<JavaCompile> {
-    options.encoding = "UTF-8"
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
 }
 
-// テスト実行時の文字コードをUTF-8に設定
-tasks.withType<Test> {
-    systemProperty("file.encoding", "UTF-8")
-}
 
-// アプリケーション実行時（gradle run）の文字コードをUTF-8に設定
-tasks.withType<JavaExec> {
-    systemProperty("file.encoding", "UTF-8")
+// 2. 実行時の文字コードをUTF-8に強制
+tasks.withType(JavaExec) {
+    jvmArgs += "-Dfile.encoding=UTF-8"
+    // 標準入出力もUTF-8にする設定（念のため）
+    systemProperty "sun.stdout.encoding", "UTF-8"
+    systemProperty "sun.stderr.encoding", "UTF-8"
 }
